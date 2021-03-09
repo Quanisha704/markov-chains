@@ -14,7 +14,7 @@ def open_and_read_file(file_path):
     f = open (file_path)
     
     'Contents of your file as one long string'
-    return print(f.read()) 
+    return f.read()
 
 
 def make_chains(text_string):
@@ -45,9 +45,19 @@ def make_chains(text_string):
     chains = {}
 
     # your code goes here
+    list_of_strings = text_string.split(" ")
+    for text in range(len(list_of_strings) - 2):                
+        tuple_key = (list_of_strings[text], list_of_strings[text + 1])
+        value_list = []
+        value_list.append(list_of_strings[text + 2])
+        chains[tuple_key] = value_list
 
     return chains
 
+    #start at index 0 and 1 >> forms a tuple, which is a key in our dictionary
+    #the value for this key, is a list: index 2, which is added to this list (iteration 1)
+    #index 1 and 2 will form a tuple, that is a key, and its value is a list, which is index 3 (iteration 2)
+    
 
 def make_text(chains):
     """Return text from chains."""
