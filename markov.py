@@ -11,8 +11,10 @@ def open_and_read_file(file_path):
     """
 
     # your code goes here
-
-    return 'Contents of your file as one long string'
+    f = open (file_path)
+    
+    'Contents of your file as one long string'
+    return print(f.read()) 
 
 
 def make_chains(text_string):
